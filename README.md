@@ -395,4 +395,3 @@ PromptCI/
 Made with ❤️ by **[Qubrid AI](https://qubrid.com)**
 
 </div>
-
