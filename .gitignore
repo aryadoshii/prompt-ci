@@ -1,0 +1,21 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+database/*.db
+backend/database/*.db
+outputs/*.html
+backend/outputs/*.html
+*.egg-info/
+extension/out/
+extension/node_modules/
+
+# Runtime / logs
+*.log
+nohup.out
+uvicorn.log
+
+# Test workspace and scratch files
+test_workspace/
+simulate_extension.py

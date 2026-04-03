@@ -1,0 +1,115 @@
+{
+  "name": "promptci",
+  "displayName": "PromptCI",
+  "description": "Catch prompt regressions before your users do.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Testing"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:promptci.runTests",
+    "onCommand:promptci.connectGithubRepo",
+    "onCommand:promptci.diagnose",
+    "workspaceContains:promptci.yaml",
+    "workspaceContains:**/*.prompt"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "promptci.runTests",
+        "title": "PromptCI: Run Regression Tests"
+      },
+      {
+        "command": "promptci.approveAndPush",
+        "title": "PromptCI: Apply Fix and Push"
+      },
+      {
+        "command": "promptci.openReport",
+        "title": "PromptCI: Open Last Report"
+      },
+      {
+        "command": "promptci.connectGithubRepo",
+        "title": "PromptCI: Connect GitHub Repo"
+      },
+      {
+        "command": "promptci.diagnose",
+        "title": "PromptCI: Diagnose Setup"
+      },
+      {
+        "command": "promptci.configure",
+        "title": "PromptCI: Configure"
+      }
+    ],
+    "configuration": {
+      "title": "PromptCI",
+      "properties": {
+        "promptci.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "URL of the PromptCI backend API"
+        },
+        "promptci.autoRunOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically run tests when a prompt file is saved"
+        },
+        "promptci.promptFilePatterns": {
+          "type": "array",
+          "default": [
+            "**/*.prompt",
+            "**/prompts/**/*.txt",
+            "**/system_prompt.txt",
+            "**/promptci.yaml"
+          ],
+          "description": "File patterns to watch for prompt changes"
+        },
+        "promptci.notifyEmail": {
+          "type": "string",
+          "default": "",
+          "description": "Email address to send regression reports to"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "promptci",
+          "title": "PromptCI",
+          "icon": "$(beaker)"
+        }
+      ]
+    },
+    "views": {
+      "promptci": [
+        {
+          "id": "promptci.results",
+          "name": "Test Results"
+        },
+        {
+          "id": "promptci.history",
+          "name": "Run History"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "js-yaml": "^4.1.0"
+  }
+}

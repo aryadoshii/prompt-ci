@@ -1,0 +1,16 @@
+version: "1.0"
+model: "openai/gpt-oss-120b"
+prompt_file: "system.prompt"
+
+test_cases:
+  - id: "TC-001"
+    category: "refund_handling"
+    input: "I want a refund for my broken product"
+    expected_behaviour: "Should acknowledge issue, offer refund process, be empathetic"
+
+settings:
+  pass_threshold: 7.0
+  max_fix_iterations: 3
+  notify_email: "engineer@company.com"
+  auto_fix: true
+  require_approval_before_push: true

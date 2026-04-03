@@ -1,0 +1,19 @@
+[project]
+name = "promptci-backend"
+version = "0.1.0"
+description = "PromptCI — LLM Prompt Regression Testing Agent"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "google-adk[extensions]>=0.5.0",
+    "composio-openai>=0.7.0",
+    "openai>=1.30.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "duckduckgo-search>=6.0.0",
+]
+
+[tool.uv]
+dev-dependencies = []
