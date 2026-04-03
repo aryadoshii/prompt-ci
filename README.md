@@ -72,18 +72,18 @@ PromptCI is designed for teams that treat prompts like production code.
 
 ---
 
-### Run Results Sidebar
-<img src="frontend/assets/screenshot_results.png" alt="PromptCI results sidebar" width="100%" />
+### Run Results
+<img src="frontend/assets/screenshot_results_2.png" alt="PromptCI results sidebar" width="100%" />
+
+---
+
+### HTML Regression Code
+<img src="frontend/assets/screenshot_htmlcode.png" alt="PromptCI run history" width="100%" />
 
 ---
 
 ### HTML Regression Report
 <img src="frontend/assets/screenshot_report.png" alt="PromptCI HTML report" width="100%" />
-
----
-
-### Run History
-<img src="frontend/assets/screenshot_history.png" alt="PromptCI run history" width="100%" />
 
 ---
 
